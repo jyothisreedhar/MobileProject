@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>Mobile List</title>
+{% extends 'mobile/base.html' %}
+{% block body_block %}
+
+
+<div class="row">
+    {%for mobile in mobiles%}
+    <div class="col-4">
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{mobile.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{mobile.product_name}}</h5>
+                <p class="card-text">{{mobile.price}}</p>
+                <a href="{%url 'details' mobile.id%}" class="btn btn-primary">View</a>
+<!--                <a href="{%url 'update' mobile.id%}" class="btn btn-primary">Update</a>-->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {%endblock%}
+
+</div>
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+{%block body_block%}
+<table class="table">
+    <tr>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Specification</td>
+        <td>Status</td>
+        <td>Address</td>
+    </tr>
+    {%for orders in order%}
+    <tr>
+        <td>
+            <div class="image"><img src="{{orders.product.image.url}}" class="card-img-top" alt="..."></div>
+
+        </td>
+        <td>{{orders.product}}</td>
+        <td>{{orders.product.price}}</td>
+        <td>{{orders.product.specs}}</td>
+        <td>{{orders.status}}</td>
+        <td>{{orders.address}}</td>
+        <td><a href="{%url 'cancelorder' orders.id%}">Cancel Order</a></td>
+    </tr>
+    {%endfor%}
+
+</table>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">-->
+<!--    <div class="col-4"></div>-->
+<!--    <div class="col-4">-->
+<!--        <div class="card" style="width: 18rem;">-->
+<!--            <img src="{{mobile.image.url}}" class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Name:{{mobile.product_name}}</h5>-->
+<!--                <p class="card-text">Price:{{mobile.price}}</p>-->
+<!--                <p class="card-text">Specs:{{mobile.specs}}</p>-->
+<!--&lt;!&ndash;                <a href="{%url 'buynow' mobile.id %}" class="btn btn-primary">Buy Now</a>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        </form>-->
+<!--    </div>-->
+
+
+<!--    <div class="col-4"></div>-->
+<!--</div>-->
+
+<!--{%endblock%}-->

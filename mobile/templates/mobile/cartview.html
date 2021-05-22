@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<title>My Orders</title>
+{%extends 'mobile/base.html'%}
+{%block body_block%}
+<table class="table table-dark" style="color:white">
+    <tr>
+        <td></td>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Specificaton</td>
+        <td>Quantity</td>
+        <td>Total Price</td>
+    </tr>
+    {%for cart in carts%}
+    <tr>
+        <td>
+            <div class="image"><img src="{{cart.product.image.url}}" class="card-img-top" alt="..."></div>
+        </td>
+        <td>{{cart.product}}</td>
+        <td>{{cart.price}}</td>
+        <td>{{cart.product.specs}}</td>
+        <td>{{cart.quantity}}</td>
+        <td>{{cart.price_total}}</td>
+        <td><a href="{%url 'remove' cart.id%}" class="btn btn-danger">Remove</a></td>
+        <td><a href="{%url 'checkout' cart.id%}" class="btn btn-primary">Place Order</a></td>
+
+
+
+
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}

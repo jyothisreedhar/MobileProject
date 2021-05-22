@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'mobile/index.html'%}
+{%block body_block%}
+<div class="row">
+
+    <div class="col-4 ">
+        <div class="card" style="width: 18rem;">
+            <img src="{{mobile.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Name: {{mobile.product_name}}</h5>
+                <p class="card-text">Spec: {{mobile.specs}}</p>
+                <p class="card-text">Price: {{mobile.price}}</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{%endblock%}
